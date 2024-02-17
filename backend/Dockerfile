@@ -11,5 +11,4 @@ RUN yarn
 COPY . .
 
 # Expose the listening port of your app
-EXPOSE 3003
 
