@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: backend
+    platform: linux/amd64
+    ports:
+      - 3000:3003
+    networks:
+      - postgres-network
+    volumes:
+      - ./backend:/app
+    command: [ "yarn", "start" ]
+
+networks:
+  postgres-network:
+    driver: bridge
